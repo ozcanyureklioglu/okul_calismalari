@@ -1,0 +1,118 @@
+<html>
+    <meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+<title>Giriş Sayfası</title>    
+    
+<body>
+    
+<div class="barContainer" onclick="slide()" id="asd">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+</div>  
+    
+<div class="slideDown" id="slide">
+    <img src="maku.png">
+    <button class="but">Section</button>
+        <div class="menu">   
+            <a href="#">Not Listesi</a>
+            <a href="#">Not Listesi</a>
+            <a href="#">Not Listesi</a>
+            <a href="#">Not Listesi</a>
+    
+        </div>
+     <button class="but">Section 2</button>
+        <div class="menu">   
+            <a href="#">Not Listesi</a>
+            <a href="#">Not Listesi</a>
+            <a href="#">Not Listesi</a>
+            <a href="#">Not Listesi</a>
+    
+        </div>
+        
+        <button class="but">Section</button>
+        <div class="menu">   
+            <a href="#">Not Listesi</a>
+            <a href="#">Not Listesi</a>
+            <a href="#">Not Listesi</a>
+            <a href="#">Not Listesi</a>
+    
+        </div>
+     <button class="but">Section 2</button>
+        <div class="menu">   
+            <a href="#">Not Listesi</a>
+            <a href="#">Not Listesi</a>
+            <a href="#">Not Listesi</a>
+            <a href="#">Not Listesi</a>
+    
+        </div>
+    
+    
+    
+</div>  
+    
+    
+    
+</body>
+
+<script>
+
+function slide(){
+    
+    var bar=document.getElementById("asd");
+    var slide=document.getElementById("slide");
+    
+    if(bar.classList.contains("change")){
+        bar.classList.remove("change");
+    }else{
+        bar.classList.add("change");
+    }
+    
+    if(slide.classList.contains("slide")){
+        slide.classList.remove("slide");
+        document.body.style.backgroundColor=null;
+        document.body.style.marginLeft="0px";
+    }else{
+        slide.classList.add("slide");
+        document.body.style.backgroundColor="rgba(0,0,0,0.5)";
+        document.body.style.marginLeft="300px";
+    }
+    
+    
+    
+}
+
+
+    var i;
+    var acc=document.getElementsByClassName("but");
+    for(i=0;i<acc.length;i++){
+        acc[i].onclick=function(){
+            this.classList.toggle("active");
+            var panel=this.nextElementSibling;
+            
+            if(panel.style.maxHeight){
+                panel.style.maxHeight=null;
+                
+            }else{
+                panel.style.maxHeight=panel.scrollHeight+"px";
+            }
+            
+        }
+        
+        
+    }  
+    
+ /*   var a=document.getElementById("asd");
+    if(a.classList.contains("barContainerSlide")){
+        a.classList.remove("barContainerSlide");
+        a.classList.add("barContainer");
+        
+        
+    }else{
+        a.classList.add("barContainerSlide");
+        a.classList.remove("barContainer");
+    }
+    */
+</script>
+
+</html>
