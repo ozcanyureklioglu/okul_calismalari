@@ -11,6 +11,7 @@ text="""Lütfen işlem yapmak istediğiniz numarayı girin: \n
 6- Kullanıcı ismi öğrenmek\n
 7-Çık
 
+
 """
 osname=os.name
 lst=[]
